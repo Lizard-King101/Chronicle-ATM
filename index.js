@@ -2,7 +2,7 @@ const { app, ipcMain, BrowserWindow, protocol } = require('electron');
 const path = require('path');
 const url = require('url');
 
-var url = url.format({
+var windowUrl = url.format({
     pathname: path.join(__dirname, 'www/index.html'),
     protocol: 'file:',
     slashes: true
@@ -21,7 +21,7 @@ function createWindow() {
             nodeIntegration: true
         }
     })
-    win.loadURL(url);
+    win.loadURL(windowUrl);
   
     //// uncomment below to open the DevTools.
   
