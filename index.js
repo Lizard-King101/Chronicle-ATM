@@ -1,14 +1,20 @@
-const { app, ipcMain, BrowserWindow } = require('electron');
+const { app, ipcMain, BrowserWindow, protocol } = require('electron');
+const path = require('path');
+const url = require('url');
 
-var url = `file://${__dirname}/www/index.html`;
+var url = url.format({
+    pathname: path.join(__dirname, 'www/index.html'),
+    protocol: 'file:',
+    slashes: true
+});
 
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
-        width: 1080,
-        height: 600,
-        minWidth: 800,
-        minHeight: 500,
+        width: 600,
+        height: 300,
+        minWidth: 400,
+        minHeight: 200,
         backgroundColor: '#ffffff',
         frame: false,
         webPreferences: {
