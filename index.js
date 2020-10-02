@@ -3,7 +3,7 @@ const path = require('path');
 const url = require('url');
 
 var windowUrl = url.format({
-    pathname: path.join(__dirname, 'www/index.html'),
+    pathname: path.resolve('www/index.html'),
     protocol: 'file:',
     slashes: true
 });
