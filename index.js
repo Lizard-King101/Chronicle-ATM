@@ -2,11 +2,7 @@ const { app, ipcMain, BrowserWindow, protocol } = require('electron');
 const path = require('path');
 const url = require('url');
 
-var windowUrl = url.format({
-    pathname: path.resolve('www/index.html'),
-    protocol: 'file:',
-    slashes: true
-});
+var filePath = 'www/index.html';
 
 function createWindow() {
     // Create the browser window.
@@ -21,7 +17,7 @@ function createWindow() {
             nodeIntegration: true
         }
     })
-    win.loadURL(windowUrl);
+    win.loadFile(filePath);
   
     //// uncomment below to open the DevTools.
   
