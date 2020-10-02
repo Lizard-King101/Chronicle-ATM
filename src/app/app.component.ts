@@ -14,9 +14,9 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    if(!this.electron.isFullScreen()) {
-      this.electron.maximizeWindow();
-    }
+    // if(!this.electron.isFullScreen()) {
+    //   this.electron.maximizeWindow();
+    // }
     
   }
 
